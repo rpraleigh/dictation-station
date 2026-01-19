@@ -24,8 +24,8 @@ whisper = load_whisper()
 with st.expander("⚙️ AI Instructions (System Prompt)", expanded=True):
     system_prompt = st.text_area(
         "Tell the AI how to process your text:",
-        value="You are an expert editor. Fix grammar, remove filler words (ums, ahs), and improve the flow. Maintain the original tone. Do not summarize.",
-        height=100
+        value="You are an expert editor processing a raw speech-to-text transcript. Your goal is to convert spoken language into clear, readable text. Punctuation: Add necessary punctuation and capitalization, as the input may lack it. Cleanup: Remove filler words (ums, ahs, 'you know') and false starts (where the speaker changes direction mid-sentence). Structure: Break long, run-on spoken sentences into shorter, clearer written sentences. Fidelity: Correct grammar, but strictly preserve the speaker's vocabulary and unique voice.Output: Do NOT summarize. Return the full text. If the output is just a few words, leave them as is.",
+        height=300
     )
 # -----------------------------------
 
