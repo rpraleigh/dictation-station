@@ -3,8 +3,8 @@ services:
     build: .
     ports:
       - "8501:8501"
-    # This extra_hosts line is sometimes needed on Linux, 
-    # but on Mac Docker Desktop, 'host.docker.internal' usually works automatically.
-    # We include it just to be safe if you ever move environments.
+    # This is the section that enables Live Editing
+    volumes:
+      - ./app.py:/app/app.py
     extra_hosts:
       - "host.docker.internal:host-gateway"
